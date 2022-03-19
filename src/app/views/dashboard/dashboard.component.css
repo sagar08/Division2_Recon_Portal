@@ -1,0 +1,5 @@
+.wrap-table-cell {
+  max-width : 100px;
+  word-break : normal;
+  text-align: justify;
+}

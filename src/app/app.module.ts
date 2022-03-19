@@ -15,6 +15,7 @@ import { HeaderComponent } from './shared/layout/header/header.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { SideBarComponent } from './shared/layout/side-bar/side-bar.component';
 import { MainLayoutComponent } from './shared/layout/main-layout/main-layout.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { MainLayoutComponent } from './shared/layout/main-layout/main-layout.com
     HeaderComponent,
     FooterComponent,
     SideBarComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +35,7 @@ import { MainLayoutComponent } from './shared/layout/main-layout/main-layout.com
     ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
+    Ng2SearchPipeModule,
     PrimeNgAppModule
   ],
   providers: [],
