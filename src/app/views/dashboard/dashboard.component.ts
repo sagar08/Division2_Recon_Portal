@@ -2,6 +2,7 @@ import { CustomerService } from './../../services/customer.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProcessData } from 'src/app/models/processData';
+import { Data, DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,8 @@ export class DashboardComponent implements OnInit {
   filterTerm!: string;
 
   constructor(private router: Router,
-    private customerService: CustomerService) { }
+    private customerService: CustomerService,
+    private dataService: DataService) { }
 
   data = [
     {
@@ -73,7 +75,12 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
-  viewProcess(customerId: number) {
+  viewProcess(processData: ProcessData) {
+    const data = new Data();
+    data.module = 'process-detail';
+    data.dataObject = processData;
+
+    this.dataService.onChangeData(data);
     this.router.navigate(['/process-detail']);
   }
 }

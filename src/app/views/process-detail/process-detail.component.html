@@ -21,63 +21,67 @@
     <!-- Customer Id -->
     <tr>
       <td><span>Customer Id</span></td>
-      <td><span>3123</span></td>
+      <td><span>{{processData?.CustomerId}}</span></td>
     </tr>
 
     <!-- Customer Name -->
     <tr>
       <td><span>Customer Name</span></td>
-      <td><span>UMC Utrecht</span></td>
+      <td><span>{{processData?.CustomerName}}</span></td>
+    </tr>
+
+    <!-- Machine Id -->
+    <tr>
+      <td><span>Machine Id</span></td>
+      <td><span>{{processData?.MachineId}}</span></td>
     </tr>
 
     <!-- Machine Number -->
     <tr>
       <td><span>Machine Number</span></td>
-      <td><span>UMC-342</span></td>
-    </tr>
-
-    <!-- Machine Number -->
-    <tr>
-      <td><span>Machine Id</span></td>
-      <td><span>21</span></td>
+      <td><span>{{processData?.MachineNumber}}</span></td>
     </tr>
 
     <!-- MachineTypeSerial -->
     <tr>
       <td><span>Machine Type Serial</span></td>
-      <td><span>EWD220;33819830413901</span></td>
+      <td><span>{{processData?.MachineTypeSerial}}</span></td>
     </tr>
 
     <!-- Process -->
     <tr>
       <td><span>Process</span></td>
-      <td><span>WashDisWash</span></td>
+      <td><span>{{processData?.Process}}</span></td>
     </tr>
 
     <!-- Process Time -->
     <tr>
       <td><span>Process Time</span></td>
-      <td><span>Start:2019-13-02
-          21:13:11.328; End:2019-13-02
-          22:03:00.327</span></td>
+      <td><span>Start:{{processData?.ProcessStartTime}}; End:{{processData?.ProcessEndTime}}
+        </span></td>
     </tr>
 
     <!-- Sensor Data -->
     <tr>
       <td><span>Sensor Data</span></td>
-      <td><span>WaterTemp:celcius:23; Pump10:off; Pump5:on; DrainSensor:off; WaterLevel:ml-432;</span></td>
+      <td><span>{{processData?.SensorData}}</span></td>
     </tr>
 
     <!-- Status -->
     <tr>
       <td><span>Status</span></td>
-      <td> <span class="badge rounded-pill bg-success">Online</span></td>
+      <td>
+        <span class="badge rounded-pill bg-success"
+              [hidden]="!processData?.Online">Online</span>
+        <span class="badge rounded-pill bg-secondary"
+              [hidden]="processData?.Online">Offline</span>
+      </td>
     </tr>
 
     <!-- Online From -->
     <tr>
       <td><span>Online From</span></td>
-      <td><span>27-07-2014 10:02:3</span></td>
+      <td><span>{{processData?.OnlineFrom}}</span></td>
     </tr>
   </tbody>
 </table>

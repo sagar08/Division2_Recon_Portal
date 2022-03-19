@@ -39,19 +39,19 @@
       </tr>
     </thead>
     <tbody class="align-middle">
-      <tr *ngFor="let d of processDataList | filter: filterTerm">
+      <tr *ngFor="let p of processDataList | filter: filterTerm">
         <td>
-          <span class="p-3">{{ d.CustomerId }}</span>
+          <span class="p-3">{{ p.CustomerId }}</span>
         </td>
-        <td>{{ d.MachineNumber }}</td>
-        <td>{{ d.MachineNumber }}</td>
-        <td>{{ d.Process }}</td>
-        <td class="wrap-table-cell">{{ d.SensorData }}</td>
+        <td>{{ p.CustomerName }}</td>
+        <td>{{ p.MachineNumber }}</td>
+        <td>{{ p.Process }}</td>
+        <td class="wrap-table-cell">{{ p.SensorData }}</td>
         <td>
           <span class="badge rounded-pill bg-success"
-                [hidden]="!d.Online">Online</span>
+                [hidden]="!p.Online">Online</span>
           <span class="badge rounded-pill bg-secondary"
-                [hidden]="d.Online">Offline</span>
+                [hidden]="p.Online">Offline</span>
         </td>
         <td>
           <div class="row">
@@ -61,7 +61,7 @@
                  style="color: blue;"
                  aria-hidden="true"
                  title="View"
-                 (click)="viewProcess(d.CustomerId)"></i>
+                 (click)="viewProcess(p)"></i>
             </div>
             <!-- Action - Edit-->
             <div class="col-4">

@@ -28,6 +28,6 @@ export class DataService {
 }
 
 export class Data {
-  module: string;
+  module: string = '';
   dataObject: any;
 }

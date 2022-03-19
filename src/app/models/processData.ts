@@ -1,5 +1,6 @@
 export interface ProcessData {
   CustomerId: number;
+  CustomerName: string;
   MachineId: number;
   MachineNumber: string;
   MachineTypeSerial: string;
