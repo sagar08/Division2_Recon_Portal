@@ -1,4 +1,4 @@
-export interface Machine {
+export interface ProcessData {
   CustomerId: number;
   MachineId: number;
   MachineNumber: string;

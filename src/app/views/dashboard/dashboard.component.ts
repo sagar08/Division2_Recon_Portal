@@ -1,5 +1,7 @@
+import { CustomerService } from './../../services/customer.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProcessData } from 'src/app/models/processData';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +10,12 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
+  processDataList: ProcessData[] = [];
   filterTerm!: string;
+
+  constructor(private router: Router,
+    private customerService: CustomerService) { }
+
   data = [
     {
       CustomerId: 1,
@@ -54,8 +59,20 @@ export class DashboardComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.getProcessData();
   }
 
+  getProcessData()
+  {
+    this.customerService.getProccessData().subscribe(
+      (result) => {
+        this.processDataList = result.Data;
+      },
+      (error) => {
+        console.log('error', error);
+      }
+    );
+  }
   viewProcess(customerId: number) {
     this.router.navigate(['/process-detail']);
   }

@@ -39,7 +39,7 @@
       </tr>
     </thead>
     <tbody class="align-middle">
-      <tr *ngFor="let d of data | filter: filterTerm">
+      <tr *ngFor="let d of processDataList | filter: filterTerm">
         <td>
           <span class="p-3">{{ d.CustomerId }}</span>
         </td>
