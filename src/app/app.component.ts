@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Division2_Recon_Portal';
+  title = 'Division2 Recon Portal';
 }
