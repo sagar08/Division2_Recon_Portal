@@ -1,6 +1,21 @@
-# Division2ReconPortal
+# DIVISION2 RECON - Angular SPA
+The project to is a demostation of working model of front end, that is responsible to display the data and managing request-response.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+## Project Overview   
+
+* Login page - Landing page of the application
+* Dashboard
+* Process Details
+
+## Stack
+### IDE
+* VsCode
+* Angular CLI - version 13.2.5.
+
+## Configuration
+* environemnt.ts - serviceURL: backend api url.
+
+**----------------------------------------------------------------------------**
 
 ## Development server
 
